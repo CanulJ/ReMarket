@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- Botón de menú -->
+    <button class="menu-button" (click)="toggleMenu()">☰</button>
+
+    <!-- Nombre de la marca al lado del botón -->
+    <span class="brand-name">ReMarket</span>
+  </div>
+</nav>
+
+<!-- Menú desplegable con opciones llamando a servicios de Angular -->
+<div class="sidebar" [class.open]="menuOpen">
+  <a (click)="navigateTo('inicio')">Inicio</a>
+  <a (click)="navigateTo('servicios')">Servicios</a>
+  <a (click)="Irchat()">Ir al Chat</a>
+</div>
+
+<!-- Onda decorativa -->
+<div class="wave"></div>
+
+<!-- Botón flotante y movible para abrir el chatbot -->
+<button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+  💬
+</button>
+

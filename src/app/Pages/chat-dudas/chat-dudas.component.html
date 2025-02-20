@@ -1,0 +1,18 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h2>Chat de Ayuda</h2>
+    <button class="close-button" (click)="closeChat()">✖</button>
+  </div>
+  <div class="chat-box" #chatBox>
+    <div *ngFor="let chat of chatHistory" [ngClass]="{'user-msg': chat.sender === 'Tú', 'bot-msg': chat.sender === 'Asistente'}">
+      <span class="sender">{{ chat.sender }}</span>
+      <p class="message-text">{{ chat.message }}</p>
+    </div>
+  </div>
+  <div class="input-area">
+    <input [(ngModel)]="userMessage" placeholder="Escribe tu mensaje..." (keyup.enter)="sendMessage()">
+    <button (click)="sendMessage()" title="Enviar mensaje" aria-label="Enviar mensaje">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(145deg, #d5d8e8, #f1f3f8);
+}
+
+.formulario-container {
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #c2c5d3, -8px -8px 16px #f8faff;
+  text-align: center;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar-icon {
+  font-size: 48px;
+  color: #3f51b5;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; /* Ajusta el tamaño del contenedor blanco */
+  height: 70px; /* Ajusta el tamaño del contenedor blanco */
+  box-sizing: border-box;
+}
+
+
+.titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.login-button {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.additional-links {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.additional-links a {
+  text-decoration: none;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.additional-links a:hover {
+  text-decoration: underline;
+}

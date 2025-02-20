@@ -1,0 +1,51 @@
+<div class="login-container">
+  <mat-card class="formulario-container">
+    <div class="avatar-container">
+      <mat-icon class="avatar-icon">person_add</mat-icon>
+    </div>
+    <mat-card-title class="titulo">Formulario de Registro</mat-card-title>
+    
+    <mat-card-content>
+      <form [formGroup]="formLogin" (ngSubmit)="guardar()" class="login-form">
+        <!-- Nombre de Usuario -->
+        <div class="form-row spaced">
+          <mat-form-field appearance="outline" class="full-width form-field">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput formControlName="username" placeholder="Ingresa el nombre de usuario" required />
+          </mat-form-field>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="form-row spaced">
+          <mat-form-field appearance="outline" class="full-width form-field">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput formControlName="email" placeholder="Ingresa el correo electrónico" required />
+            <mat-error *ngIf="formLogin.get('email')?.hasError('email')">
+              Ingresa un correo válido.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-row spaced">
+          <mat-form-field appearance="outline" class="full-width form-field">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" formControlName="passwordHash" placeholder="Ingresa la contraseña" required />
+          </mat-form-field>
+        </div>
+
+        <!-- Botón para abrir CAPTCHA -->
+        <button mat-raised-button color="accent" type="button" (click)="openBottomSheet()">
+          Verifica que eres humano
+        </button>
+
+        <!-- Botón de Registro -->
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" class="spaced login-button" [disabled]="!isCaptchaVerified || formLogin.invalid">
+            Registrar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

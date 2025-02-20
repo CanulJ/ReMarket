@@ -1,0 +1,50 @@
+.captcha-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px;
+    text-align: center;
+    min-height: 150px;  /* Evita que el contenido se mueva */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Para que los márgenes no afecten el tamaño */
+  }
+  
+  .captcha-code {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6200ea;
+    display: inline-block;
+    min-width: 120px;  /* Fija el tamaño del código */
+    margin-bottom: 10px;  /* Espacio entre el código y el input */
+  }
+  
+  input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6200ea;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .verification-result {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
