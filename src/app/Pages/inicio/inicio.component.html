@@ -1,25 +1,53 @@
-<nav class="navbar">
-  <div class="navbar-content">
-    <!-- Botón de menú -->
-    <button class="menu-button" (click)="toggleMenu()">☰</button>
-
-    <!-- Nombre de la marca al lado del botón -->
-    <span class="brand-name">ReMarket</span>
-  </div>
-</nav>
-
-<!-- Menú desplegable con opciones llamando a servicios de Angular -->
-<div class="sidebar" [class.open]="menuOpen">
-  <a (click)="navigateTo('inicio')">Inicio</a>
-  <a (click)="navigateTo('servicios')">Servicios</a>
-  <a (click)="Irchat()">Ir al Chat</a>
+<div *ngIf="isLoading" class="loading-container">
+  <app-loading></app-loading> 
 </div>
-
-<!-- Onda decorativa -->
-<div class="wave"></div>
-
-<!-- Botón flotante y movible para abrir el chatbot -->
-<button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
-  💬
-</button>
-
+<div *ngIf="!isLoading">
+  <mat-toolbar color="primary">
+    <img class="logo" src="img/ReMarket-removebg-preview.png" alt="ReMarket Logo">  
+    <span class="spacer"></span>
+    <nav>
+      <button mat-button>Inicio</button>
+      <button mat-button>Contáctanos</button>
+      <button mat-button>Acerca de Nosotros</button>
+    </nav>
+  </mat-toolbar>
+  <main>
+    <h1 class="title">BIENVENIDO A REMARKET</h1>
+    <!-- Carrusel -->
+    <div class="carousel">
+      <button mat-icon-button (click)="changeSlide(-1)" aria-label="Imagen anterior">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <img *ngFor="let slide of slides; let i = index" 
+           [src]="slide" 
+           class="slide" 
+           [class.active]="i === currentSlide" 
+           alt="Imagen del producto">
+      <button mat-icon-button (click)="changeSlide(1)" aria-label="Imagen siguiente">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+    <!-- Sección "Acerca de Nosotros" -->
+    <section class="about">
+      <div class="container">
+        <div class="about_img">
+          <img src="img/ReMarket-removebg-preview.png" alt="Acerca de Nosotros">
+        </div>
+        <div class="titlepage">
+          <div class="about-text-box">
+            <h2>Acerca de Nosotros</h2>
+            <p>Descubre moda accesible y sostenible con nuestra selección de ropa de medio uso en excelente estado. Renueva tu estilo con prendas de calidad a precios increíbles, mientras contribuyes al consumo.</p>
+            <a href="Paversijala" class="read_more">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </section>    
+  </main>
+  <!-- Botón flotante -->
+  <button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+    💬
+  </button>
+  <footer>
+    <p>&copy; 2025 ReMarket. Todos los derechos reservados.</p>
+  </footer>
+</div>

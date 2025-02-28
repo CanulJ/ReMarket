@@ -8,8 +8,9 @@ import { Error404Component } from './Pages/error404/error404.component';
 import { ChatDudasComponent } from './Pages/chat-dudas/chat-dudas.component';
 
 
-export const routes: Routes = [
 
+export const routes: Routes = [
+    
     {path: '',component:SesionIComponent},
     {path: 'inicio', component:SesionIComponent},
     {path: 'sesion/userId', component:SesionIComponent},
@@ -33,4 +34,5 @@ export const routes: Routes = [
     {path: 'chat-dudas', component:ChatDudasComponent},
     
     { path: '**', component: Error404Component },
+
 ];
