@@ -1,0 +1,203 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  /* Misión y Visión */
+  .mission-vision {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+  }
+  
+  .mission-vision h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2d2d2d;
+  }
+  
+  .content-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  
+  .mat-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1;
+    max-width: 45%;
+  }
+  
+  .mat-card h3 {
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+  }
+  
+  .mat-card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Nuestros Valores */
+  .values {
+    background-color: #ffffff;
+    padding: 50px 0;
+  }
+  
+  .values h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2d2d2d;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .value-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .value-item:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+  }
+  
+  .value-item span {
+    font-size: 3rem;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+  }
+  
+  .value-item p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Historia */
+  .history {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .history h2 {
+    font-size: 2.5rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+  }
+  
+  .history p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Compromiso con la Sostenibilidad */
+  .sustainability {
+    background-color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .sustainability h2 {
+    font-size: 2.5rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+  }
+  
+  .sustainability p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Testimonios */
+  .testimonials {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2.5rem;
+    color: #2d2d2d;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .testimonial-item {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .testimonial-item p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+  }
+  
+  .testimonial-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #777;
+    font-style: italic;
+  }
+
+  .history, .sustainability {
+    background-color: #fafafa;
+  }
+  
+  .history p, .sustainability p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  

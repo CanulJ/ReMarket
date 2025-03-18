@@ -6,8 +6,8 @@ import { RecuperacionComponent } from './Pages/recuperacion/recuperacion.compone
 import { ResetPasswordComponent } from './Pages/reset-password/reset-password.component';
 import { Error404Component } from './Pages/error404/error404.component';
 import { ChatDudasComponent } from './Pages/chat-dudas/chat-dudas.component';
-
-
+import { ContactoComponent } from './Pages/contacto/contacto.component';
+import { AcecaDeNosotrosComponent } from './Pages/aceca-de-nosotros/aceca-de-nosotros.component';
 
 export const routes: Routes = [
     
@@ -32,6 +32,12 @@ export const routes: Routes = [
 
     {path: '',component:ChatDudasComponent},
     {path: 'chat-dudas', component:ChatDudasComponent},
+
+    {path: '',component:ContactoComponent},
+    {path: 'contacto', component:ContactoComponent},
+
+    {path: 'acerca-de-nosotros', component:AcecaDeNosotrosComponent},
+
     
     { path: '**', component: Error404Component },
 

@@ -7,8 +7,8 @@
     <span class="spacer"></span>
     <nav>
       <button mat-button>Inicio</button>
-      <button mat-button>Contáctanos</button>
-      <button mat-button>Acerca de Nosotros</button>
+      <button mat-button (click)="navigateToContact()">Contáctanos</button>
+      <button mat-button (click)="navigateToAcerca()">Acerca de Nosotros</button>
     </nav>
   </mat-toolbar>
   <main>
@@ -27,6 +27,138 @@
         <mat-icon>chevron_right</mat-icon>
       </button>
     </div>
+
+    <h2 class="productos-title">Productos Destacados</h2>
+
+<div class="product-container">
+    <mat-card class="product-card">
+      <mat-card-content>
+        <div class="image-container">
+          <img mat-card-image src="img/images (3).jpg" alt="Producto">
+        </div>
+        <h2 class="product-title">Camisa Manga larga</h2>
+        <p class="product-description">
+          Camisa de medio uso solo una postura en perfectas condiciones
+        </p>
+        <h3 class="product-price">$199.99</h3>
+        <div class="button-container">
+          <button mat-flat-button color="primary" class="buy-button">
+            <mat-icon>shopping_cart</mat-icon> Comprar
+          </button>
+          <button mat-flat-button color="accent" class="cart-button">
+            <mat-icon>add_shopping_cart</mat-icon> Carrito
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="product-card">
+      <mat-card-content>
+        <div class="image-container">
+          <img mat-card-image src="img/images (5).jpg" alt="Producto">
+        </div>
+        <h2 class="product-title">Vestido color Azul</h2>
+        <p class="product-description">
+          Hermoso vestido color azul sin ningun uso lo compre por error 
+        </p>
+        <h3 class="product-price">$120.99</h3>
+        <div class="button-container">
+          <button mat-flat-button color="primary" class="buy-button">
+            <mat-icon>shopping_cart</mat-icon> Comprar
+          </button>
+          <button mat-flat-button color="accent" class="cart-button">
+            <mat-icon>add_shopping_cart</mat-icon> Carrito
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="product-card">
+      <mat-card-content>
+        <div class="image-container">
+          <img mat-card-image src="img/images (4).jpg" alt="Producto">
+        </div>
+        <h2 class="product-title">Traje De Tirantes</h2>
+        <p class="product-description">
+          Lo compre para el trabajo pero no me sirvio mucho que digamos
+        </p>
+        <h3 class="product-price">$199.99</h3>
+        <div class="button-container">
+          <button mat-flat-button color="primary" class="buy-button">
+            <mat-icon>shopping_cart</mat-icon> Comprar
+          </button>
+          <button mat-flat-button color="accent" class="cart-button">
+            <mat-icon>add_shopping_cart</mat-icon> Carrito
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+  
+  <mat-card class="product-card">
+    <mat-card-content>
+      <div class="image-container">
+        <img mat-card-image src="img/images (6).jpg" alt="Producto">
+      </div>
+      <h2 class="product-title">Traje De Bomberos</h2>
+      <p class="product-description">
+        Soy un ex trabajador del sector de bomberos por diferentes cuestiones se vende este traje en medianas condiciones
+      </p>
+      <h3 class="product-price">$499.99</h3>
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="buy-button">
+          <mat-icon>shopping_cart</mat-icon> Comprar
+        </button>
+        <button mat-flat-button color="accent" class="cart-button">
+          <mat-icon>add_shopping_cart</mat-icon> Carrito
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="product-card">
+    <mat-card-content>
+      <div class="image-container">
+        <img mat-card-image src="img/images (1).jpg" alt="Producto">
+      </div>
+      <h2 class="product-title">Camisa Tipo Polo</h2>
+      <p class="product-description">
+        He comprado esta camisa por error no me queda del todo bien asi que por ello la vendo esta en perfectas condiciones
+      </p>
+      <h3 class="product-price">$99.99</h3>
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="buy-button">
+          <mat-icon>shopping_cart</mat-icon> Comprar
+        </button>
+        <button mat-flat-button color="accent" class="cart-button">
+          <mat-icon>add_shopping_cart</mat-icon> Carrito
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="product-card">
+    <mat-card-content>
+      <div class="image-container">
+        <img mat-card-image src="img/images (2).jpg" alt="Producto">
+      </div>
+      <h2 class="product-title">Top Femenino</h2>
+      <p class="product-description">
+        Vendo lindo top femenino de medio uso
+      </p>
+      <h3 class="product-price">$59.99</h3>
+      <div class="button-container">
+        <button mat-flat-button color="primary" class="buy-button">
+          <mat-icon>shopping_cart</mat-icon> Comprar
+        </button>
+        <button mat-flat-button color="accent" class="cart-button">
+          <mat-icon>add_shopping_cart</mat-icon> Carrito
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
     <!-- Sección "Acerca de Nosotros" -->
     <section class="about">
       <div class="container">
@@ -37,7 +169,7 @@
           <div class="about-text-box">
             <h2>Acerca de Nosotros</h2>
             <p>Descubre moda accesible y sostenible con nuestra selección de ropa de medio uso en excelente estado. Renueva tu estilo con prendas de calidad a precios increíbles, mientras contribuyes al consumo.</p>
-            <a href="Paversijala" class="read_more">Leer más</a>
+            <a href="acerca-de-nosotros" class="read_more">Leer más</a>
           </div>
         </div>
       </div>

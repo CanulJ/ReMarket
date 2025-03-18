@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 interface RespuestaLogin {
   autenticado: boolean;
   mensaje?: string; // Opcional para evitar errores si el backend no lo envía
+  email?: string;
 }
 
 @Component({
@@ -49,23 +50,29 @@ export class SesionIComponent {
 
   iniciarSesion() {
     const credenciales = this.formLogin.value; // Obtiene los datos del formulario
-
     this.usuarioService.verificarUsuario(credenciales).subscribe({
       next: (respuesta: RespuestaLogin) => {
         if (respuesta.autenticado) {
-          alert(respuesta.mensaje ?? 'Inicio de sesión exitoso'); // Si mensaje no existe, usa el texto por defecto
+          // Guardar la información del usuario en sessionStorage
+          sessionStorage.setItem('user', JSON.stringify({
+            username: credenciales.username,
+            email: respuesta.email,  // Ahora se puede acceder correctamente al 'email'
+          }));
+  
+          alert(respuesta.mensaje ?? 'Inicio de sesión exitoso');
           this.router.navigate(['/Inicio']); // Redirige a la página principal
         } else {
-          alert('Credenciales incorrectas'); // Mensaje cuando no se autentica
+          alert('Credenciales incorrectas');
         }
       },
       error: (error) => {
         console.error('Error al verificar usuario:', error);
-        alert(error.error?.mensaje || 'Error en la solicitud'); // Manejo de errores con seguridad
+        alert(error.error?.mensaje || 'Error en la solicitud');
       }
     });
   }
-
+  
+  
   irARegistro() {
     this.router.navigate(["/Login"]);
   }

@@ -8,3 +8,9 @@ export interface Usuarios {
     passwordResetToken?: string; 
     tokenExpiration?: Date;
 }
+
+export interface Contacto {
+    nombre: string;
+    email: string;
+    mensaje: string;
+}

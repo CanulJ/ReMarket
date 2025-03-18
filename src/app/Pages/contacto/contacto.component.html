@@ -1,0 +1,64 @@
+<div id="map" style="height: 100%; width: 100%;"></div>
+
+<mat-card appearance="outlined" class="contact-card">
+  <mat-card-content>
+    <div class="container mt-4 form-container">
+      <h2>Contacto</h2>
+      <p>Si tienes algún problema, envíanos tu mensaje y te responderemos lo antes posible.</p>
+
+      <form (ngSubmit)="sendForm()" #contactForm="ngForm">
+        <!-- Nombre -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" [(ngModel)]="contactData.nombre" name="nombre" required disabled>
+          <mat-error *ngIf="contactForm.submitted && !contactData.nombre">Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- Correo Electrónico -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput placeholder="Correo Electrónico" type="email" [(ngModel)]="contactData.email" name="email" required disabled>
+          <mat-error *ngIf="contactForm.submitted && !contactData.email">Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- Mensaje -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput placeholder="Tu mensaje" [(ngModel)]="contactData.mensaje" name="mensaje" rows="4" required></textarea>
+          <mat-error *ngIf="contactForm.submitted && !contactData.mensaje">Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- Botón Enviar -->
+        <button mat-raised-button type="submit">Enviar</button>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+   💬
+ </button>
+
+<footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="location_icon">
+            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="location_icon">
+            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +52 9131248232</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="location_icon">
+            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> ti_4222010029&#64;utcam.edu.mx</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

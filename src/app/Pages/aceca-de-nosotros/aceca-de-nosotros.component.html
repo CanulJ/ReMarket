@@ -1,0 +1,68 @@
+<!-- Misión y Visión -->
+<section class="mission-vision">
+  <div class="container">
+    <h2>Nuestra Misión y Visión</h2>
+    <div class="content-box">
+      <mat-card class="box" [@fadeIn]>
+        <mat-card-content>
+          <h3>Misión</h3>
+          <p>"Brindar moda accesible y sostenible, ofreciendo prendas de calidad que promuevan el consumo responsable y ayuden a reducir el impacto ambiental."</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="box" [@fadeIn]>
+        <mat-card-content>
+          <h3>Visión</h3>
+          <p>"Ser la principal opción para quienes buscan estilo y sostenibilidad en su vestimenta, promoviendo un cambio positivo en la industria de la moda."</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+<!-- Nuestros Valores -->
+<section class="values">
+  <div class="container">
+    <h2>Nuestros Valores</h2>
+    <div class="values-grid">
+      <div *ngFor="let value of values" class="value-item">
+        <span>{{ value.icon }}</span>
+        <p>{{ value.name }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Historia -->
+<section class="history">
+  <div class="container">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Todo comenzó con una idea sencilla: hacer que la moda sea accesible y sostenible. Al ver la cantidad de ropa desechada cada año, decidimos crear un espacio donde las prendas tuvieran una segunda oportunidad.
+      Desde nuestros inicios, hemos ayudado a cientos de clientes a renovar su armario con opciones responsables y de calidad.
+    </p>
+  </div>
+</section>
+
+<!-- Compromiso con la Sostenibilidad -->
+<section class="sustainability">
+  <div class="container">
+    <h2>Compromiso con la Sostenibilidad</h2>
+    <p>
+      Trabajamos con proveedores y clientes para extender el ciclo de vida de las prendas, reduciendo la huella ecológica de la industria textil.
+      A través del reciclaje y la reutilización, promovemos un modelo de consumo más consciente.
+    </p>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section class="testimonials">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonial-list">
+      <div *ngFor="let testimonial of testimonials" class="testimonial-item">
+        <p>"{{ testimonial.feedback }}"</p>
+        <span>- {{ testimonial.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

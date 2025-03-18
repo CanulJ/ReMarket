@@ -1,0 +1,133 @@
+/* Mapa */
+#map {
+  height: 500px; /* Aumentamos la altura del mapa */
+  width: 100%;   /* Aseguramos que ocupe todo el ancho */
+}
+
+/* Estilo del formulario y tarjeta */
+.contact-card {
+  width: 600px; /* Aumentamos el ancho */
+  margin-left: 1.5%; /* Mover el formulario más a la izquierda */
+  padding: 20px;
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 0; /* Alineamos el formulario a la izquierda */
+  transform: translateY(-50%); /* Ajustamos la posición para que quede centrado verticalmente */
+  background-color: #fff; /* Fondo blanco sólido */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+/* Títulos y párrafos */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Estilo para los campos de entrada */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+mat-form-field input, mat-form-field textarea {
+  font-size: 0.9rem; /* Campos más pequeños */
+}
+
+/* Botón Enviar (sin cambios de color) */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: grab;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:active {
+  cursor: grabbing;
+}
+
+
+/* Footer - Ajuste de la disposición de los íconos */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0; /* Reducimos el espacio */
+}
+
+.footer .container {
+  max-width: 1200px;
+}
+
+.footer .location_icon {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.footer .location_icon li {
+  margin: 5px 0; /* Reducimos el margen */
+}
+
+.footer .location_icon li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem; /* Reducimos el tamaño de los íconos */
+}
+
+.footer .location_icon li a:hover {
+  color: #004d40;
+}
+
+/* Disposición de los íconos a la derecha */
+.footer .row {
+  display: flex;
+  justify-content: flex-end; /* Cambiado para que todo se alinee a la derecha */
+}
+
+.footer .col-md-4 {
+  text-align: left; /* Alineación de los íconos a la izquierda dentro de sus columnas */
+  flex: 1; /* Asegura que las columnas tomen el mismo espacio */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    left: 5%;
+    padding: 15px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+  }
+}

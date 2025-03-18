@@ -8,11 +8,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from '../loading/loading.component';  
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, LoadingComponent,RouterModule ],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, LoadingComponent,RouterModule,MatCardModule ],
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
@@ -28,7 +29,7 @@ export class InicioComponent implements OnInit {
   private startX = 0;
   private startY = 0;
 
-  constructor() {
+  constructor(private router: Router) {
     this.startAutoSlide();
   }
 
@@ -111,5 +112,13 @@ export class InicioComponent implements OnInit {
       this.openChatBot();
     }
     this.isDragging = false; // Reiniciamos el estado de arrastre
+  }
+  
+  navigateToContact() {
+    this.router.navigate(['/contacto']);
+  }
+
+  navigateToAcerca() {
+    this.router.navigate(['/acerca-de-nosotros']);
   }
 }
