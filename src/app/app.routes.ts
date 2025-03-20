@@ -37,7 +37,6 @@ export const routes: Routes = [
     {path: 'contacto', component:ContactoComponent},
 
     {path: 'acerca-de-nosotros', component:AcecaDeNosotrosComponent},
-
     
     { path: '**', component: Error404Component },
 

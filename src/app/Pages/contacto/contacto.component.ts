@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ChatDudasComponent } from '../chat-dudas/chat-dudas.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MenuNavegacionComponent } from '../menu-navegacion/menu-navegacion.component';
 
 declare var google: any;
 
@@ -20,7 +21,7 @@ declare var google: any;
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css'],
   standalone: true,
-  imports: [FormsModule, MatCardModule, MatInputModule, MatFormFieldModule, CommonModule, MatButtonModule, MatDividerModule, MatIconModule]
+  imports: [FormsModule, MatCardModule, MatInputModule, MatFormFieldModule, CommonModule, MatButtonModule, MatDividerModule, MatIconModule,MenuNavegacionComponent]
 })
 export class ContactoComponent implements OnInit {
 
