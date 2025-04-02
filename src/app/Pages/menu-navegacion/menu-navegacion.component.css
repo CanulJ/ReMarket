@@ -35,10 +35,11 @@ html {
     right: 40px; /* Pegado a la derecha */
     align-items: center;
     justify-content: center;
-    background-color: var(--bgColorMenu);
+    background-color: #ffffff !important; /* Siempre blanco */
+    border: 2px solid #ccc; /* Borde visible */
     border-radius: 12px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transform: scale(1); /* Lo hacemos un poco más pequeño */
+    transform: scale(1);
 }
 
   .menu__item {
@@ -128,6 +129,7 @@ html {
     clip-path: url(#menu);
     background-color: var(--bgColorMenu);
     transition: transform var(--duration), width var(--duration);
+    border: 2px solid #ccc;
   }
   
   .svg-container {

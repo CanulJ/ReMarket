@@ -7,14 +7,24 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { LoadingComponent } from '../loading/loading.component';  
 import {MatCardModule} from '@angular/material/card';
 import { MenuNavegacionComponent } from '../menu-navegacion/menu-navegacion.component';
+import { CarruselComponent } from '../carrusel/carrusel.component';
+import { CargaComponent } from '../carga/carga.component';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatProgressSpinnerModule, LoadingComponent,RouterModule,MatCardModule,MenuNavegacionComponent],
+  imports: [CommonModule,
+            MatToolbarModule,
+            MatButtonModule, 
+            MatIconModule, 
+            MatProgressSpinnerModule, 
+            RouterModule,
+            MatCardModule,
+            MenuNavegacionComponent,
+            CarruselComponent,
+            CargaComponent],
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
@@ -121,5 +131,9 @@ export class InicioComponent implements OnInit {
 
   navigateToAcerca() {
     this.router.navigate(['/acerca-de-nosotros']);
+  }
+
+  navigateToALeer() {
+    this.router.navigate(['/login-c1']);
   }
 }

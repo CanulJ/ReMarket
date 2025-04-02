@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ChatDudasComponent } from '../chat-dudas/chat-dudas.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MenuNavegacionComponent } from '../menu-navegacion/menu-navegacion.component';
+import { Carga2Component } from '../carga2/carga2.component';
 
 declare var google: any;
 
@@ -21,9 +22,20 @@ declare var google: any;
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css'],
   standalone: true,
-  imports: [FormsModule, MatCardModule, MatInputModule, MatFormFieldModule, CommonModule, MatButtonModule, MatDividerModule, MatIconModule,MenuNavegacionComponent]
+  imports: [FormsModule,
+            MatCardModule,
+            MatInputModule, 
+            MatFormFieldModule, 
+            CommonModule, 
+            MatButtonModule, 
+            MatDividerModule, 
+            MatIconModule,
+            MenuNavegacionComponent,
+            Carga2Component]
 })
 export class ContactoComponent implements OnInit {
+
+  isLoading = true;
 
   contactData: Contacto = {
     nombre: '',
@@ -41,7 +53,11 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
     this.initMap();
     this.cargarDatosUsuario();
+    setTimeout(() => {
+      this.isLoading = false; // Termina la carga después de 2 segundos
+    }, 2000);
   }
+  
 
   openChatBot() {
     this.bottomSheet.open(ChatDudasComponent);

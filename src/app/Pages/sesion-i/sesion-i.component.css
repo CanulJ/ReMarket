@@ -30,8 +30,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px; /* Ajusta el tamaño del contenedor blanco */
-  height: 70px; /* Ajusta el tamaño del contenedor blanco */
+  width: 70px;
+  /* Ajusta el tamaño del contenedor blanco */
+  height: 70px;
+  /* Ajusta el tamaño del contenedor blanco */
   box-sizing: border-box;
 }
 
@@ -72,4 +74,151 @@
 
 .additional-links a:hover {
   text-decoration: underline;
+}
+
+/* Efecto de fondo y centrado */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(53, 53, 251, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+/* Contenedor del formulario con sombra */
+.formulario-container {
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 16px #c2c5d3, -10px -10px 46px #f8faff;
+  text-align: center;
+  opacity: 0;
+  /* Inicialmente invisible */
+  animation: fadeIn 1s forwards;
+  /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos del ícono de avatar */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: bounce 1.5s ease-in-out forwards;
+  /* Animación del ícono */
+}
+
+/* Animación de rebote del avatar */
+@keyframes bounce {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.avatar-icon {
+  font-size: 48px;
+  color: #3f51b5;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+/* Título */
+.titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.3s;
+  /* Animación del título */
+}
+
+/* Campos de entrada (Usuario, Contraseña) */
+.full-width {
+  width: 100%;
+}
+
+.form-row.spaced {
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.5s;
+  /* Animación para cada campo */
+}
+
+.mat-form-field {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.6s;
+  /* Animación de los campos */
+}
+
+.mat-form-field input {
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos del botón */
+.login-button {
+  background-color: #3f51b5;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1s;
+  /* Animación del botón */
+}
+
+/* Efecto hover sobre el botón */
+.login-button:hover {
+  background-color: #2c387e;
+}
+
+/* Estilo de los enlaces adicionales */
+.additional-links {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.additional-links a {
+  text-decoration: none;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.additional-links a:hover {
+  text-decoration: underline;
+}
+
+/* Animación de los campos al hacer foco */
+.mat-form-field input:focus {
+  background-color: #c5cae9;
+  transition: background-color 0.3s ease;
 }

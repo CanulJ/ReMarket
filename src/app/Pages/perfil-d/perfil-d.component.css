@@ -1,0 +1,227 @@
+:root {
+  --primary: rgba(255, 70, 86, 0.9);
+  --secondary: rgba(89, 205, 255, 0.9);
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex; /* Cambiado de grid a flex */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Alineación horizontal */
+  gap: 20px; /* Espacio entre las tarjetas */
+  background: linear-gradient(to top, 
+  rgba(0,0,0,0.3)50%,  rgba(0,0,0,0.3)50%), url(/img/Montañas1.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  background: var(--glass);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(var(--primary), var(--secondary));
+  border-radius: 50%;
+  top: -50px;
+  left: -50px;
+  filter: blur(60px);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(var(--secondary), var(--primary));
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+  filter: blur(60px);
+}
+
+.content {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+h2 {
+  color: white;
+  font-size: 1.75em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  background: var(--glass);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  transform: translateY(-5px);
+}
+
+button {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(255, 70, 86, 0.4);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+  25% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+  75% { transform: translateY(20px) rotateX(-5deg) rotateY(-5deg); }
+}
+
+/* Social Icons */
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: 60px;
+  opacity: 1;
+}
+
+.wrapper .icon:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}

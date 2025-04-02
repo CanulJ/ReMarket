@@ -1,13 +1,17 @@
 <div class="menu">
-    <div 
+  <div 
     *ngFor="let item of menuItems; let i = index"
     class="menu__item" 
     [class.active]="activeIndex === i" 
     (click)="setActive(i, $event); navigateTo(item.route)"
+    [matTooltip]="getTooltip(item.icon)" 
+    matTooltipPosition="above"  
   >
     <mat-icon>{{ item.icon }}</mat-icon>
   </div>
-  <div #menuBorder class="menu-border"></div> <!-- Borde para el menú -->
+  <div #menuBorder class="menu-border"></div>
+</div>
+
   <!-- SVG para el borde deslizante -->
   <svg class="svg-container">
     <clipPath id="menu" clipPathUnits="objectBoundingBox">

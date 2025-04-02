@@ -15,4 +15,9 @@ export class ContactoService {
   enviarCorreo(contacto: Contacto): Observable<any> {
     return this.http.post(`${this.apiUrl}/enviarCorreoContacto`, contacto);
   }  
+
+  enviarMensajeBuzon(datos: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/enviarCorreobuzon`, datos)  // Enviar datos al backend
+  }
+  
 }

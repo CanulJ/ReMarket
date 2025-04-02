@@ -1,0 +1,152 @@
+/* Fondo elegante para el contenedor principal */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+  
+  /* Fondo elegante con degradado */
+  background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Azul oscuro a turquesa */
+  color: white; /* Ajusta el color del texto si es necesario */
+}
+
+
+/* Estilo para la tarjeta de Buzón de Quejas */
+.buzon-card {
+  grid-column: span 2; /* Ocupa 2 columnas */
+  grid-row: span 3;    /* Ocupa 3 filas */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #fff;
+  position: relative; /* Mantener la tarjeta en su lugar */
+  height: 550px; /* Altura ajustada para la tarjeta */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilo para el encabezado del Buzón */
+mat-card-header {
+  background-color: #007bff; /* Fondo azul */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Estilo para el formulario dentro del Buzón */
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Estilo para los campos de entrada */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Estilo para los botones */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  background-color: #28a745; /* Color verde */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para la tarjeta de experiencia en ReMarket */
+.experience-card {
+  position: absolute; 
+  bottom: 2px;  
+  right: 30px; 
+  width: 450px; 
+  height: 490px; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilo para el contenido de la tarjeta de experiencia */
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.experience-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; 
+  height: auto;
+  margin-bottom: 55px;
+  
+}
+
+.experience-card p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: grab;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:active {
+  cursor: grabbing;
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+.parent {
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);    
+}
+
+.buzon-card {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.experience-card {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+}

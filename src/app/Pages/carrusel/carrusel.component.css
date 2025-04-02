@@ -1,0 +1,46 @@
+body {
+    background-color: #b9c1cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img {
+    height: 200px;  /* Reducido el tamaño de la imagen */
+    width: 120px;   /* Reducido el tamaño de la imagen */
+}
+
+.container {
+    width: 150px;  /* Contenedor más pequeño */
+    height: 250px; /* Contenedor más pequeño */
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(800px);  /* Menor distancia de perspectiva */
+    animation: gallery 14s linear infinite;  /* Más rápido para ajustarse al tamaño */
+    cursor: pointer;
+}
+
+.container span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);  /* Menor distancia Z */
+    -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3,3,3,0.2));
+}
+
+.container span img {
+    position: absolute;
+    border-radius: 10px;
+    border: 6px ridge #ccc;
+}
+
+@keyframes gallery {
+    0% {
+        transform: perspective(800px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(800px) rotateY(360deg);
+    }
+}

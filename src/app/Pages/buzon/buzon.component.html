@@ -1,0 +1,59 @@
+<div *ngIf="isLoading" class="loading-container">
+  <app-carga2></app-carga2>
+</div>
+
+<app-menu-navegacion></app-menu-navegacion>
+
+<!-- Contenedor principal con grid -->
+<div class="parent">
+  <!-- Tarjeta de Buzón de Quejas -->
+  <mat-card class="buzon-card">
+    <mat-card-header>
+      <mat-card-title>Buzón de Quejas y Sugerencias</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="sendForm()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="quejaSugerenciaData.nombre" name="nombre" required disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="quejaSugerenciaData.email" name="email" required type="email" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de mensaje</mat-label>
+          <mat-select [(ngModel)]="quejaSugerenciaData.tipo" name="tipo">
+            <mat-option value="Queja">Queja</mat-option>
+            <mat-option value="Sugerencia">Sugerencia</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput [(ngModel)]="quejaSugerenciaData.mensaje" name="mensaje" required></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Enviar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Tarjeta de experiencia en ReMarket -->
+  <mat-card class="experience-card">
+    <mat-card-header>
+      <mat-card-title>Cuéntanos tu experiencia en ReMarket</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="experience-content">
+        <img src="img/ReMarket-removebg-preview.png" alt="ReMarket Logo" class="experience-logo">
+        <p>Queremos saber cómo ha sido tu experiencia con nosotros. ¡Tus comentarios nos ayudan a mejorar!</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+  💬
+</button>

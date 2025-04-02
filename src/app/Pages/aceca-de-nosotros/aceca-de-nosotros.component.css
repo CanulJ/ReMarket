@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 80vh;
-  background-color: #f5f5f5;
-  padding: 40px 20px;
+  background-color: #aeaeae;
+  padding: 100px 20px;
 }
 
 .container {
@@ -56,7 +56,7 @@ p {
 .valores-section {
   text-align: center;
   padding: 50px 20px;
-  background-color: #fff;
+  background-color: #aeaeae;
 }
 
 /* Título */
@@ -126,7 +126,7 @@ p {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #fafafa;
+  background-color: #aeaeae;
   border-radius: 10px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15); 
   transition: all 0.3s ease-in-out;
@@ -139,4 +139,88 @@ p {
   background-color: #e3f2fd;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25); 
   transform: translateY(-5px);
+}
+
+.testimonials {
+  margin-top: 50px;
+  display: flex; /* Usamos flexbox para centrar */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  
+}
+
+.carousel {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  margin-bottom: 5%;
+}
+
+.testimonial-item p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin: 0; /* Asegura que el párrafo no tenga márgenes innecesarios */
+  
+}
+
+.testimonial-item span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  color: #007bff;
+  background: transparent;
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: #0056b3;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: grab;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:active {
+  cursor: grabbing;
 }

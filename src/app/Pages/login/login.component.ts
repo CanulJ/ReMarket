@@ -14,7 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatBottomSheet, MatBottomSheetRef, MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { FormsModule } from '@angular/forms';
-import {MatListModule} from '@angular/material/list';
 
 @Component({
   standalone: true,

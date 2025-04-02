@@ -1,0 +1,32 @@
+<div *ngIf="isLoading" class="loading-container">
+  <app-carga2></app-carga2>
+</div>
+
+<app-menu-navegacion></app-menu-navegacion>
+
+<mat-card appearance="outlined" class="faq-card">
+    <mat-card-title class="faq-title">Preguntas Frecuentes</mat-card-title>
+    <mat-accordion class="faq-container">
+      <mat-expansion-panel *ngFor="let pregunta of preguntasFrecuentes">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ pregunta.titulo }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ pregunta.respuesta }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card>
+  
+  <mat-card class="experience-card">
+    <mat-card-header>
+      <mat-card-title>¿Necesitas ayuda? Aqui encontraras las preguntas mas frecuentes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="experience-content">
+        <img src="img/ReMarket-removebg-preview.png" alt="ReMarket Logo" class="experience-logo">
+        <p>Para una mejor ayuda siempre puedes ponerte en contacto con nuestro equipo de soporte en el apartado de "Contactanos"</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+    💬
+  </button>

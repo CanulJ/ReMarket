@@ -1,3 +1,7 @@
+<div *ngIf="isLoading" class="loading-container">
+  <app-carga2></app-carga2>
+  </div>
+<app-menu-navegacion></app-menu-navegacion>
 <!-- Misión y Visión -->
 <section class="mission-vision">
   <div class="container">
@@ -44,26 +48,8 @@
   </div>
 </section>
 
-<!-- Compromiso con la Sostenibilidad -->
-<section class="sustainability">
-  <div class="container">
-    <h2>Compromiso con la Sostenibilidad</h2>
-    <p>
-      Trabajamos con proveedores y clientes para extender el ciclo de vida de las prendas, reduciendo la huella ecológica de la industria textil.
-      A través del reciclaje y la reutilización, promovemos un modelo de consumo más consciente.
-    </p>
-  </div>
-</section>
+<button class="floating-button" (mousedown)="startDrag($event)" (click)="openChatBotIfNotDragging($event)">
+  💬
+</button>
 
-<!-- Testimonios -->
-<section class="testimonials">
-  <div class="container">
-    <h2>Lo que dicen nuestros clientes</h2>
-    <div class="testimonial-list">
-      <div *ngFor="let testimonial of testimonials" class="testimonial-item">
-        <p>"{{ testimonial.feedback }}"</p>
-        <span>- {{ testimonial.name }}</span>
-      </div>
-    </div>
-  </div>
-</section>
+<app-perfil-d></app-perfil-d>

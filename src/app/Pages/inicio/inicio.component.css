@@ -1,3 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  background: linear-gradient(135deg,  #6db4ff, #e698bb); /* O la imagen que desees */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Esto asegura que el contenido principal ocupe el espacio restante */
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Hace que el footer se quede al final */
+}
+
+/* Otros estilos que puedas tener */
+
+
 /* Barra de navegación */
 mat-toolbar {
   display: flex;
@@ -47,10 +76,51 @@ button[mat-button]:hover {
 .productos-title {
   text-align: center;
   font-size: 36px;
-  margin-top: 80px;  /* Espacio adicional arriba del título */
+  margin-top: 100px;  /* Espacio adicional arriba del título */
   margin-bottom: 40px; /* Espacio debajo del título */
   color: #333;  /* Color oscuro para el título */
 }
+
+.title, .productos-title {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor principal del carrusel de texto */
+.carousel-text-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  overflow: hidden; /* Esconde el texto que se sale de los bordes */
+  position: relative; /* Para que los elementos dentro se posicionen relativos al contenedor */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo suave para el contenedor */
+  backdrop-filter: blur(10px); /* Efecto de difuminado, como el glasmorfismo */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px 0; /* Espaciado para que el texto no toque los bordes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  margin-bottom: 100px;
+}
+
+/* Estilo del texto que se mueve */
+.carousel-text {
+  display: inline-block;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  font-size: 50px; /* Tamaño grande del texto */
+  font-weight: bold;
+  color: #333; /* Color del texto */
+  animation: moveText 10s linear infinite; /* Animación de movimiento */
+}
+
+/* Animación que mueve el texto de un extremo a otro */
+@keyframes moveText {
+  0% {
+    transform: translateX(200%); /* Empieza completamente fuera de la pantalla a la derecha */
+  }
+  100% {
+    transform: translateX(-200%); /* Termina completamente fuera de la pantalla a la izquierda */
+  }
+}
+
 
 /* Contenedor del carrusel */
 .carousel {
@@ -61,10 +131,13 @@ button[mat-button]:hover {
   margin: 20px 0;
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.623); /* Fondo más suave y transparente */
+  backdrop-filter: blur(15px); /* Efecto de difuminado similar al glasmorfismo */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar */
 }
-
 /* Imágenes del carrusel centradas y con animación de transición */
 .slide {
   width: 350px;
@@ -72,7 +145,7 @@ button[mat-button]:hover {
   object-fit: contain;
   opacity: 0;
   position: absolute;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.9s ease-in-out;
 }
 
 /* Clase activa para la imagen visible */
@@ -81,16 +154,24 @@ button[mat-button]:hover {
   position: relative;
 }
 
-/* Flechas de navegación en los extremos */
 button[mat-icon-button] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(4, 6, 46, 0.5); /* Fondo oscuro */
   color: white;
   font-size: 36px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Bordes redondeados */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Borde suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Cursor en forma de mano */
+  z-index: 10;
 }
 
 /* Flecha izquierda */
@@ -103,15 +184,50 @@ button[mat-icon-button]:last-of-type {
   right: 20px;
 }
 
+/* Efecto cuando se pasa el mouse */
+button[mat-icon-button]:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Efecto cuando se hace clic */
+button[mat-icon-button]:active {
+  transform: scale(0.95); /* Efecto de presión */
+}
+
 /* Sección "Acerca de Nosotros" */
+/* Estilo de la sección "Acerca de Nosotros" */
 .about {
   display: flex;
-  justify-content: space-between;  /* Espaciado entre los elementos */
+  justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4;
   padding: 60px 20px;
-  margin-top: 80px; /* Espacio antes de la sección 'Conócenos' */
-  margin-bottom: 80px;
+  background: #f5f5f5;
+  transition: transform 0.5s ease-out;
+}
+
+.about img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-box {
+  max-width: 500px;
+  text-align: left;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px); /* Glasmorfismo */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.about:hover .about-text-box {
+  transform: translateY(-10px);
+  opacity: 1;
 }
 
 .container {
@@ -209,6 +325,8 @@ footer {
 }
 
 .product-card {
+  background: #f7f7f7e5; /* Fondo blanco para las tarjetas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   width: 350px;
   text-align: center;
   padding: 16px;
@@ -220,9 +338,17 @@ footer {
   justify-content: space-between;
 }
 
+.product-card img {
+  transition: transform 0.3s ease-in-out;
+}
+
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover img {
+  transform: scale(1.1); /* Imagen más grande al pasar el mouse */
 }
 
 .image-container {
@@ -265,6 +391,16 @@ footer {
 
 .buy-button, .cart-button {
   width: 48%; /* Ajusta el ancho de los botones para que no se solapen */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.buy-button:hover, .cart-button:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.buy-button:active, .cart-button:active {
+  transform: scale(0.95);
 }
 
 .cart-button {
@@ -275,4 +411,60 @@ footer {
   margin-right: 8px; /* Para separar el ícono del texto */
 }
 
+/* Estilos para el contenedor del botón */
+.button-container-unique {
+  display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del botón */
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
 
+/* Estilos para el contenedor cuando se pasa el mouse */
+.button-container-unique::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+/* Efecto de hover para el contenedor */
+.button-container-unique:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+
+/* Efecto de active para el contenedor */
+.button-container-unique:active::before {
+  filter: blur(0.2em);
+}
+
+/* Estilos para el botón */
+.styled-button-unique {
+  font-size: 1.4em;
+  padding: 0.6em 0.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #000000b4;
+  position: relative;
+  z-index: 1;
+  display: inline-block; /* Asegura que el botón se ajuste al tamaño del contenedor */
+}
+
+/* Agregar efectos al botón (opcional) */
+.styled-button-unique:hover {
+  background-color: #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.app-carrusel {
+  margin-top: 40px;  /* Esto agregará espacio encima del carrusel */
+}
